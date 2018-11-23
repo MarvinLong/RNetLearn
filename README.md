@@ -1,1 +1,1 @@
-# R_Net_Pratice
+# based https://github.com/HKUST-KnowComp/R-Net
