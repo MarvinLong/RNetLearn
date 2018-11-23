@@ -27,10 +27,10 @@ class R-NET():
 		#--- 2. gated attenction-based rnn
 		with tf.variable_scope('qp_matching'):
 			# do attention and use gate
-			qc_att = dot_attention(u_p,u_q,mask=self.q_mask,)
+			qp_att = dot_attention(u_p,u_q,mask=self.q_mask,)
 			# get the v_p
-			rnn = gru(,,,input_size=qc_att.get_shape().as_list()[-1],)
-			v_p = rnn(qc_att,seq_len=)
+			rnn = gru(,,,input_size=qp_att.get_shape().as_list()[-1],)
+			v_p = rnn(qp_att,seq_len=)
 		
 		#--- 3. self-match attention ?
 		with tf.variable_scope('self_matching'):
